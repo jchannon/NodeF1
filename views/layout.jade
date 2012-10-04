@@ -3,11 +3,17 @@ html
 	head
 		title= title
 		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel="stylesheet", href="/bootstrap/css/bootstrap-responsive.css")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
 		script(src="http://code.jquery.com/jquery-latest.js")
-		script(src="/bootstrap/js//bootstrap.min.js")
+		script(src="/bootstrap/js/bootstrap.min.js")
 		.container
-			.row
+			#header.row
 				img(src='/bootstrap/img/header.jpg')
-			block content
+			.row
+				.span4
+					block sidebar
+				.span8
+					block content

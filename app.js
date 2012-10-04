@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , routes = require('./routes/index.js')
+  , home = require('./routes/index.js')
   , user = require('./routes/user.js')
   , http = require('http')
   , path = require('path');
@@ -27,7 +27,8 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+app.get('/', home.currentDriverStandings);
+app.get('/constructor-standings', home.currentConstructorStandings)
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
