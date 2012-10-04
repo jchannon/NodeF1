@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+		h1 Node F1
+		h2= title
+		h3= RaceData.season
+		ul  
+			each item in RaceData.Races
+				- var raceDate = new Date(item.date).toDateString();
+				li #{item.raceName},  #{item.Circuit.Location.locality}, #{item.Circuit.Location.country} 
+					= raceDate

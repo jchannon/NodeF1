@@ -14,6 +14,25 @@ html
 				img(src='/bootstrap/img/header.jpg')
 			.row
 				.span4
-					block sidebar
+					ul(class='nav nav-list')
+						li(class='nav-header') Current Season
+						- if(currentUrl === '/')
+							li(class='active')
+								a(href='/') Current Driver Standings
+						- else
+							li
+								a(href='/') Current Driver Standings
+						- if(currentUrl === '/constructor-standings')
+							li(class='active')
+								a(href='/constructor-standings') Current Constructor Standings
+						- else
+							li
+								a(href='/constructor-standings') Current Constructor Standings
+						- if(currentUrl === '/current-schedule')
+							li(class='active')
+								a(href='/current-schedule') Current Race Schedule
+						- else
+							li
+								a(href='/current-schedule') Current Race Schedule
 				.span8
 					block content
