@@ -31,7 +31,7 @@ exports.currentSchedule = function(req, response) {
 
 	var date = new Date();
 	var year = date.getUTCFullYear();
-	console.log(req.path);
+
 	request.get("http://ergast.com/api/f1/" + year + ".json", function(err, res, body) {
 		if(!err) {
 			var model = JSON.parse(body);
@@ -48,7 +48,6 @@ exports.currentSchedule = function(req, response) {
 
 function buildData(url, title, body, req, response) {
 	var model = JSON.parse(body);
-	console.log(req.path);
 	response.render(url, {
 		title: title,
 		currentUrl: req.path,
