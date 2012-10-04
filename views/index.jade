@@ -1,6 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p Race was #{raceName}
+		h1= title
+		p Welcome to #{title}
+		h3= RaceData.season
+		ul  
+			each item in RaceData.StandingsLists[0].DriverStandings
+				li #{item.position}.  #{item.Driver.givenName} #{item.Driver.familyName} 
+					b #{item.points} 
+					| points

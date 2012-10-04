@@ -1,20 +1,19 @@
 var request = require('request'),
-    http = require('http');
+	http = require('http');
 
 exports.index = function(req, response){
   
-    var resultsObj = '';
+	var resultsObj = '';
 	
-	request.get("http://ergast.com/api/f1/current/last/results.json", function (err, res, body) {
-	    if (!err) {
-	        resultsObj = JSON.parse(body);
-	        //Just an example of how to access properties:
-	        console.log(resultsObj.MRData.RaceTable.Races[0].raceName);
-	       
-	        response.render('index', { title: 'Express', raceName: resultsObj.MRData.RaceTable.Races[0].raceName });
-	    }
+	request.get("http://ergast.com/api/f1/current/driverStandings.json", function (err, res, body) {
+		if (!err) {
+			var model = JSON.parse(body);
+			
+		   
+			response.render('index', { title: 'Express', RaceData: model.MRData.StandingsTable });
+		}
 	});
 	
-  	
-  	
+	  
+	 
 };
