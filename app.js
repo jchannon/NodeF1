@@ -1,13 +1,10 @@
+"use strict";
 
-/**
- * Module dependencies.
- */
-
-var express = require('express')
-  , home = require('./routes/index.js')
-  , user = require('./routes/user.js')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+    home = require('./routes/index.js'),
+    user = require('./routes/user.js'),
+    http = require('http'),
+    path = require('path');
 
 var app = express();
 
@@ -28,8 +25,8 @@ app.configure('development', function(){
 });
 
 app.get('/', home.currentDriverStandings);
-app.get('/constructor-standings', home.currentConstructorStandings)
-app.get('/current-schedule', home.currentSchedule)
+app.get('/constructor-standings', home.currentConstructorStandings);
+app.get('/current-schedule', home.currentSchedule);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

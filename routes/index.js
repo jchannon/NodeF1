@@ -1,7 +1,10 @@
+"use strict";
+
 var request = require('request'),
 	http = require('http');
 
 exports.currentDriverStandings = function(req, response) {
+
 
 	var date = new Date();
 	var year = date.getUTCFullYear();
@@ -47,6 +50,7 @@ exports.currentSchedule = function(req, response) {
 };
 
 function buildData(url, title, body, req, response) {
+
 	var model = JSON.parse(body);
 	response.render(url, {
 		title: title,
