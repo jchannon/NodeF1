@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/Jon/Documents/Github/NodeF1"
+		}
+],
+"build_systems":
+[
+	{
+		"name": "NodeF1Build",
+		"shell": true,
+		"cmd": ["nodemon --debug $project_path/app.js & node-inspector"], 
+		
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"selector": "source.js"
+	}
+
+]
+}
