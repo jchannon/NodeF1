@@ -1,8 +1,11 @@
 extends ../layout
 
+block title
+	title Current Constructor Standings
+
 block content
 		h1 Node F1
-		h2= title
+		h2 Current Constructor Standings
 		h3= RaceData.season
 		ul  
 			each item in RaceData.StandingsLists[0].ConstructorStandings

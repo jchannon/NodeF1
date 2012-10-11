@@ -1,6 +1,10 @@
 extends ../layout
 
+block title
+	title Login
+
 block content
+
 	form(action="/loginuser", method="POST")
 		label(for="username") UserName:
 		input(id="username",type="text", name="username")
